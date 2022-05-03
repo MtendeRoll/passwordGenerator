@@ -41,3 +41,9 @@ Follow these steps to complete the challenge:
 * The URL of the deployed application:
 
 * The URL of the GitHub repository. Give the repository a unique name and include a README describing the project:
+
+## Personal Notes
+* ensure it adapts to multiple screen sizes
+* include special characters [click-here](https://owasp.org/www-community/password-special-characters)
+* have multiple descriptive commit messages
+* 
