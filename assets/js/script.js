@@ -2,16 +2,24 @@
 
 //psuedocode 
 // make generate password button clickable
+
+var generatePassword = function(){
+promptLength();
+}
 //create a series of prompts for password criteria
 
 // prompt for length of password between 8-128
-var passwordLength = function () {
-  var promptLength = window.prompt("How long would you like your password to be? Choose betwen 8 and 128 Characters");
+var promptLength = function(){
+  var passwordLength = window.prompt("How long would you like your password to be? Choose betwen 8 and 128 Characters");
 
-  if (promptLength === "" || promptLength === null) {
-    window.alert(" You need to provide a valid numerical answer! Please try again.");
-    return passwordLength();
+// ensuring a valid input
+  if (passwordLength === null || passwordLength === "" || parseInt(passwordLength) < 8 || parseInt(passwordLength) > 128){
+    passwordLength = window.prompt("You need to provide a valid numerical answer between 8 and 128! Please try again.")
   }
+
+ passwordLength = parseInt(passwordLength);
+ console.log(passwordLength);
+
 };
 // prompt for special characters
 var specialCharacters = [" ", "!", "#", "$", "%", "&", "'", "\"", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~",];
