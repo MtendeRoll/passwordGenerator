@@ -39,8 +39,38 @@ var promptSpecial = function () {
 };
 // prompt for lower case
 var haveLowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var promptLowerCase = function () {
+  var confirmLowerCase = window.confirm("Would you like your password to have a lower case?");
+
+  // ensure valid input
+  if (confirmLowerCase === true) {
+    // pick a special character
+    randomIndex(haveLowerCase);
+  }
+};
 // prompt for upper case
 var haveUpperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var promptUpperCase = function () {
+  var confirmUpperCase = window.confirm("Would you like your password to have a upper case?");
+
+  // ensure valid input
+  if (confirmUpperCase === true) {
+    // pick a special character
+    randomIndex(haveUpperCase);
+  }
+};
+//prompt for numbers
+var haveNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var promptNumbers = function () {
+  var confirmNumbers = window.confirm("Would you like your password to have a number?");
+
+  // ensure valid input
+  if (confirmNumbers === true) {
+    // pick a special character
+    randomIndex(haveNumbers);
+  }
+};
+
 // validate input
 // password must have at least one of these characters
 // generate password meeting the criteria
