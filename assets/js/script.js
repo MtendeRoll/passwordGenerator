@@ -35,7 +35,9 @@ var promptLowerCase = function () {
   var confirmLowerCase = window.confirm("Would you like your password to have a lower case?");
 
   // ensure valid input
-  if (confirmLowerCase === true) {
+  if (confirmLowerCase) {
+    // push into empty array
+    storedOptions.push(haveLowerCase);
   }
 };
 // prompt for upper case
@@ -53,15 +55,16 @@ var promptNumbers = function () {
   var confirmNumbers = window.confirm("Would you like your password to have a number?");
 
   // ensure valid input
-  if (confirmNumbers === true) {
-    // pick a special character
-    randomIndex(haveNumbers);
+  if (confirmNumbers) {
+    // push into empty array
+    storedOptions.push(haveNumbers);
   }
 };
 
 // make generate password button clickable
 var generatePassword = function () {
-  var passwordResults = [];
+  promptLength();
+  console.log(promptLength);
 
   for (var i = 0; i < promptLength; i++) {
     var randomIndex = function (array) {
