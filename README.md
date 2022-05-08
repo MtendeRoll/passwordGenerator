@@ -27,5 +27,7 @@ THEN the password is either displayed in an alert or written to the page
 # View Password Generator
 
 - The URL of the deployed application:
+  [Deployed application](https://mtenderoll.github.io/passwordGenerator/)
 
 - The URL of the GitHub repository. Give the repository a unique name and include a README describing the project:
+  [Github Repository](https://github.com/MtendeRoll/passwordGenerator)
