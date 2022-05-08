@@ -1,24 +1,25 @@
 // Assignment code here
-var haveCharacters = [" ", "!", "#", "$", "%", "&", "'", '"', "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
+var haveCharacters = ["!", "#", "$", "%", "&", "'", '"', "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 var haveLowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var haveUpperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var haveNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 // empty array to store password options
 var storedOptions = [];
-
+var passwordLength = 0;
 // prompt for length of password between 8-128
 function promptLength() {
-  var passwordLength = window.prompt("How long would you like your password to be? Choose betwen 8 and 128 Characters");
+  var newPasswordLength = window.prompt("How long would you like your password to be? Choose betwen 8 and 128 Characters");
 
   // ensuring a valid input
-  if (isNaN(passwordLength) || parseInt(passwordLength) < 8 || parseInt(passwordLength) > 128) {
-    passwordLength = window.prompt("You need to provide a valid numerical answer between 8 and 128! Please try again.");
+  while (isNaN(newPasswordLength) || parseInt(newPasswordLength) < 8 || parseInt(newPasswordLength) > 128) {
+    newPasswordLength = window.prompt("You need to provide a valid numerical answer between 8 and 128! Please try again.");
   }
 
-  passwordLength = parseInt(passwordLength);
-  console.log(passwordLength);
   promptSpecial();
+
+  passwordLength = parseInt(newPasswordLength);
+  console.log(passwordLength);
 }
 
 // prompt for special characters
@@ -29,7 +30,6 @@ function promptSpecial() {
   if (confirmSpecial) {
     // push into empty array
     storedOptions = storedOptions.concat(haveCharacters);
-    console.log(storedOptions);
   }
 
   promptLowerCase();
@@ -76,11 +76,14 @@ var generatePassword = function () {
 
   var newPassword = [];
 
-  // for (var i = 0; i < promptLength; i++) {
-  //   var randomIndex = function (array) {
-  //     return Math.floor(Math.random() * promptLength);
-  //   };
-  // }
+  for (var i = 0; i < passwordLength; i++) {
+    var randomIndex = Math.floor(Math.random() * storedOptions.length);
+    console.log(storedOptions[randomIndex]);
+    newPassword = newPassword.concat(storedOptions[randomIndex]);
+    console.log(newPassword);
+  }
+
+  return newPassword;
 };
 
 // Get references to the #generate element
