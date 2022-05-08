@@ -29,7 +29,7 @@ function promptSpecial() {
   // ensure valid input
   if (confirmSpecial) {
     // push into empty array
-    storedOptions = storedOptions.concat(haveCharacters);
+    storedOptions = storedOptions.concat(...haveCharacters);
   }
 
   promptLowerCase();
@@ -41,7 +41,7 @@ function promptLowerCase() {
   // ensure valid input
   if (confirmLowerCase) {
     // push into empty array
-    storedOptions = storedOptions.concat(haveLowerCase);
+    storedOptions = storedOptions.concat(...haveLowerCase);
   }
 
   promptUpperCase();
@@ -53,7 +53,7 @@ function promptUpperCase() {
   // ensure valid input
   if (confirmUpperCase === true) {
     // pick a special character
-    storedOptions = storedOptions.concat(haveUpperCase);
+    storedOptions = storedOptions.concat(...haveUpperCase);
   }
 
   promptNumbers();
@@ -65,7 +65,7 @@ function promptNumbers() {
   // ensure valid input
   if (confirmNumbers) {
     // push into empty array
-    storedOptions = storedOptions.concat(haveNumbers);
+    storedOptions = storedOptions.concat(...haveNumbers);
   }
 }
 
@@ -83,7 +83,9 @@ var generatePassword = function () {
     console.log(newPassword);
   }
 
-  return newPassword;
+  var displayedPassword = newPassword.join("");
+
+  return displayedPassword;
 };
 
 // Get references to the #generate element

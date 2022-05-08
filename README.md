@@ -1,9 +1,9 @@
-# User Story
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
+# Generate Password
 
-# Acceptance Criteria
+A password generator that outputs the criteria of the user
+
+# User Criteria
+
 GIVEN I need a new, secure password
 WHEN I click the button to generate a password
 THEN I am presented with a series of prompts for password criteria
@@ -20,30 +20,12 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 
-# Mock-Up
-The following image shows the web application's appearance and functionality:
-![mock-up](./assets/images/03-javascript-homework-demo.png)
+# Generate Password Mock-Up
 
-# How to Complete the Challenge
-Follow these steps to complete the challenge:
+![mock-up](./assets/images/passwordGenerator-mock-up.gif)
 
-* Clone the starter code (Links to an external site.).
+# View Password Generator
 
-* Modify the code to meet the Acceptance Criteria.
+- The URL of the deployed application:
 
-* Ensure that your work meets the full list of grading requirements below.
-
-* Reach out to your classmates and instructional support team for help if you need it.
-
-* Follow the submission instructions.
-
-# Challenge Submission
-* The URL of the deployed application:
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project:
-
-## Personal Notes
-* ensure it adapts to multiple screen sizes
-* include special characters [click-here](https://owasp.org/www-community/password-special-characters)
-* have multiple descriptive commit messages
-* 
+- The URL of the GitHub repository. Give the repository a unique name and include a README describing the project:
